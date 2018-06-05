@@ -32,9 +32,32 @@ public class LeanFtTest extends UnitTestClassBase {
         globalSetup(LeanFtTest.class);
 
         // Launch the browser
-        browser = BrowserFactory.launch(BrowserType.CHROME);
+//        browser = BrowserFactory.launch(BrowserType.CHROME);
+//
+//        browser.navigate("http://advantageonlineshopping.com/#");
 
-        browser.navigate("http://nimbusserver:8000");
+        // Launch the browser
+        // browser = BrowserFactory.launch(BrowserType.CHROME);
+
+        //Launch browser remotely on SRF
+        BrowserDescription bd = new BrowserDescription();
+
+        bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "FIREFOX")
+
+        bd.set("version", "66");
+
+        bd.set("osType", "Windows");
+
+        bd.set("osVersion", "10");
+
+        bd.set("testName", "WBG - CERT");
+
+        browser = SrfLab.launchBrowser(bd);
+
+        //browser.navigate("http://nimbusserver:8000");
+
+        browser.navigate("http://www.advantageonlineshopping.com/#");
+
     }
 
     @AfterClass
