@@ -50,7 +50,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
         bd.set("osVersion", "10");
 
-        bd.set("testName", "WBG - CERT");
+        bd.set("testName", "WBG - CI - CERT");
 
         browser = SrfLab.launchBrowser(bd);
 
